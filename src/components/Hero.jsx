@@ -3,7 +3,7 @@ import Map from './Map'
 function Hero (){
     return (
         <div className="Main container">
-            <div>
+            <div className="map-container">
                 <Map />
             </div>
         </div>
