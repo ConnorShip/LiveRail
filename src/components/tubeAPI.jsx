@@ -1,55 +1,69 @@
 import { useState, useEffect } from 'react';
 
+//This function fetches the necessary data from TFL API's
+
 function TrainStatus() {
     const [status, setStatus] = useState(null);
-    const lineName = "piccadilly"; 
+    const lineName = "circle"; //Temporary line name for testing purposes
 
-    useEffect(() => {
+    useEffect(()=> {
+
         const fetchData = async () => {
             try {
-                let URL = `https://api.tfl.gov.uk/Line/${lineName}/Status`;
-
-                const response = await fetch(URL);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                //contruct URL Variable
+                const statusURL = `https://api.tfl.gov.uk/Line/${lineName}/Status`;
+                //Calling the API's 
+                const statusResponse = await fetch(statusURL);
+                // Checking the response
+                if (!statusResponse.ok) {
+                    throw new Error('Error, your request failed 😖')
                 }
 
-                const data = await response.json();
-                console.log(data);
-                setStatus(data);
-            } catch (error) {
-                console.error("Error fetching train data:", error);
+                const data = await statusResponse.json();
+                setStatus(data[0]);
+
+            } catch(error) {
+                console.error('An error while fetching necessary data: ' + error)
             }
         };
 
         fetchData();
-    }, []);
 
-    return (
-        <div>
-            <h2>Train Status Testing</h2>
-            {status && status.length > 0 ? (
-                status.map((line) => {
-                    const lineName = line.name;
-                    const serviceMessage = line.lineStatuses[0].statusSeverityDescription;
-                 
-    
-                    return (
-                        <div key={line.id}>
-                            <h3>{lineName}</h3>
-                            <p>Status: {serviceMessage}</p>
-                            <p>Crowding Level: API CALL TBD</p>
-                        </div>
-                    );
-                })
-            ) : (
-                <p>Loading...</p>
-            )}
-        </div>
-    );
+        const intervalId = setInterval(fetchData, 30000);
+        return () => clearInterval(intervalId);
+
+    }, [lineName]);
+
+return (
+    <div>
+        <h2>This is a test of the API Call:</h2>
+        {status ? (
+            <div>
+                <h3>{status.name}</h3>
+                <p>Status: {status.lineStatuses[0]?.statusSeverityDescription}</p>
+                
+                {status.lineStatuses[0]?.reason ? (
+                    <p>Disruption Details: {status.lineStatuses[0].reason}</p>
+                ) : (
+                    <p>Disruptions: No disruptions to the {lineName} line at this time.</p>
+                )}
+            </div>
+        ) : (
+            <p>Loading...</p>
+        )}
+    </div>
+);
+
 }
 
+
 export default TrainStatus;
+
+
+
+
+
+
 
 
 
