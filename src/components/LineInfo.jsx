@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import getStatusClass from './lineStatusColor';
 import "./Hero.css";
 //This function fetches the necessary data from TFL API's
 
@@ -35,9 +34,6 @@ function TrainStatus() {
 
   }, [lineName]);
 
-    if(!status) return <p>Loading...</p>
-    const statusClass = getStatusClass(status.lineStatuses[0]?.statusSeverityDescription);
-
   return (
     <>
       {status ? (
@@ -65,10 +61,3 @@ function TrainStatus() {
 }
 
 export default TrainStatus;
-
-
-/* 
-
-  
-
-*/
