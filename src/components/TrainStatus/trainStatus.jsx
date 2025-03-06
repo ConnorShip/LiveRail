@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "./Hero.css";
-//This function fetches the necessary data from TFL API's
+import './trainStatus.css'
 
+//This function fetches the necessary data from TFL API's
 function TrainStatus() {
   const [status, setStatus] = useState(null);
   const lineName = "central"; //Temporary line name for testing purposes
@@ -37,13 +37,13 @@ function TrainStatus() {
   return (
     <>
       {status ? (
-        <>
-          <div className="left-container">
-            <span id="line-name">{status.name.toUpperCase()} LINE</span>
-            <p id="line-status">Status: {status.lineStatuses[0]?.statusSeverityDescription}</p>
+        <div className="infoContainer">
+          <div className="leftContainer">
+            <span id="name">{status.name.toUpperCase()} LINE</span>
+            <p id="lineStatus">Status: {status.lineStatuses[0]?.statusSeverityDescription}</p>
           </div>
 
-          <div className="middle-container">
+          <div className="middleContainer">
             {status.lineStatuses[0]?.reason ? (
               <p>Disruption Details: {status.lineStatuses[0].reason}</p>
             ) : (
@@ -52,7 +52,7 @@ function TrainStatus() {
               </p>
             )}
           </div>
-        </>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

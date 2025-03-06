@@ -1,0 +1,21 @@
+/* Hero.jsx */
+#Main-container {
+  outline: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+.central.column {
+  outline: 2px solid black;
+  max-width: 95.5rem;
+  height: 100%;
+}
+
+.map-container {
+  background-color: #FFFFFF;
+  border-radius: 1.25rem;
+  margin-top: 2.38rem;
+  outline: 2px solid blue;
+}

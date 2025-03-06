@@ -1,5 +1,5 @@
-import Map from "./Map";
-import TrainStatus from "./LineInfo";
+import Map from "../Map";
+import TrainStatus from "../TrainStatus/trainStatus";
 import "./Hero.css";
 
 function Hero() {
@@ -9,9 +9,7 @@ function Hero() {
         <div className="map-container">
           <Map />
         </div>
-        <div className="info-container">
-          <TrainStatus />
-        </div>
+        <TrainStatus />
       </div>
     </div>
   );
