@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-import Hero from './components/Hero/Hero'
+import { useState } from 'react';
+import Hero from './components/Hero/Hero';
+import TrainStatus from './components/TrainStatus/trainStatus';
+import './App.css';
 
 function App() {
 
@@ -8,6 +9,9 @@ function App() {
     <>
       <div>
         <Hero />
+     </div>
+     <div>
+      <TrainStatus />
      </div>
     </>
   )

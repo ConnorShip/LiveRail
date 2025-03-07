@@ -38,7 +38,7 @@ function TrainStatus() {
   }, [lineName]);
 
   return (
-    <>
+    <div className="bottomMain">
       {status ? (
         <div className={`infoContainer ${getStatusClass(status)}`}>
           <div className="leftContainer">
@@ -62,7 +62,7 @@ function TrainStatus() {
       ) : (
         <p>Loading...</p>
       )}
-    </>
+    </div>
   );
 }
 

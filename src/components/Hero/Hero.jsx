@@ -5,11 +5,8 @@ import "./Hero.css";
 function Hero() {
   return (
     <div id="Main-container">
-      <div className="central column">
-        <div className="map-container">
+      <div className="map-container">
           <Map />
-        </div>
-        <TrainStatus />
       </div>
     </div>
   );

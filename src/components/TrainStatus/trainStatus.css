@@ -1,12 +1,19 @@
+.bottomMain {
+  display: flex;
+  justify-content: center;
+}
+
 .infoContainer {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    width: 95.5rem;
     height: 15rem;
     padding-top: 3rem;
     margin-top: 1.11rem;
     border: 2px solid #000000;
     border-radius: 1.25rem 1.25rem 0rem 0rem;
     color: #FFFFFF;
+    outline: 1px solid red;
   }
   
   .good-service {
