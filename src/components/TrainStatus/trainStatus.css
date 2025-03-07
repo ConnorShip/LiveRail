@@ -1,22 +1,33 @@
 .infoContainer {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    height: 22.875rem;
+    height: 15rem;
     padding-top: 3rem;
     margin-top: 1.11rem;
+    border: 2px solid #000000;
     border-radius: 1.25rem 1.25rem 0rem 0rem;
     color: #FFFFFF;
+  }
+  
+  .good-service {
     background-color: #007D32;
   }
   
-  /* Find Div's on LineInfo.jsx */
+  .minor-delays {
+    background-color: #FFD300;
+    color: black;
+  }
+  
+  .severe-delays {
+    background-color: #E42313;
+  }
   
   .leftContainer {
     grid-column: 1 / 5;
     padding-left: 1.25rem;
   }
   
-  #name {
+  .title {
     font-size: 2.25rem;
     font-weight: 700;
   }
@@ -27,14 +38,20 @@
     margin-top: 0.5rem;
   }
   
+
   .middleContainer {
     grid-column: 5 / 9;
   }
 
-.left-container {
-    grid-column: 1 / 5;
-    padding-left: 1.25rem;
-}
+  #disruptionText {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+  }
+
+  .left-container {
+      grid-column: 1 / 5;
+      padding-left: 1.25rem;
+  }
 
 
 

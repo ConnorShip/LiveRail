@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import getStatusClass from './lineStatusColor'
 import './trainStatus.css'
+
 
 //This function fetches the necessary data from TFL API's
 function TrainStatus() {
   const [status, setStatus] = useState(null);
-  const lineName = "central"; //Temporary line name for testing purposes
+
+  const lineName = "central"; //Temporary line name for testing
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,15 +40,18 @@ function TrainStatus() {
   return (
     <>
       {status ? (
-        <div className="infoContainer">
+        <div className={`infoContainer ${getStatusClass(status)}`}>
           <div className="leftContainer">
-            <span id="name">{status.name.toUpperCase()} LINE</span>
+            <span className="title">{status.name.toUpperCase()} LINE</span>
             <p id="lineStatus">Status: {status.lineStatuses[0]?.statusSeverityDescription}</p>
           </div>
 
           <div className="middleContainer">
             {status.lineStatuses[0]?.reason ? (
-              <p>Disruption Details: {status.lineStatuses[0].reason}</p>
+              <>
+                <span className="title">Disruption</span> 
+                <p id="disruptionText">{status.lineStatuses[0].reason}</p>
+              </>
             ) : (
               <p>
                 Disruptions: No disruptions to the {lineName} line at this time.

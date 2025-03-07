@@ -1,4 +1,4 @@
-import Map from "../Map";
+import Map from "../../resources/cleanSVG";
 import TrainStatus from "../TrainStatus/trainStatus";
 import "./Hero.css";
 

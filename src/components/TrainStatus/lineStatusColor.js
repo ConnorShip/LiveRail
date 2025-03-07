@@ -1,14 +1,18 @@
-export default function getStatusClass(description) {
-    const statusDescription = description.toLowerCase();
-  
-    switch (statusDescription) {
-      case "good service":
-        return "good-service";
-      case "minor delays":
-        return "minor-delays";
-      case "severe delays":
-        return "severe-delays";
-      default:
-        return "standard-status";
-    }
+function getStatusClass(status) {
+  if (!status) return "standard-status";
+
+  const severity = status.lineStatuses[0]?.statusSeverityDescription;
+
+  switch (severity) {
+    case "Good Service":
+      return "good-service"; // Green
+    case "Minor Delays":
+      return "minor-delays"; // Yellow
+    case "Severe Delays":
+      return "severe-delays"; // Red
+    default:
+      return "standard-status"; // My Fallback
   }
+}
+
+export default getStatusClass;

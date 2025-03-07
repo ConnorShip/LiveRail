@@ -3,14 +3,12 @@
   outline: 2px solid red;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   align-items: center;
 }
 
 .central.column {
   outline: 2px solid black;
   max-width: 95.5rem;
-  height: 100%;
 }
 
 .map-container {
