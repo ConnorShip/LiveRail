@@ -8,6 +8,9 @@ function TrainStatus({lineName}) {
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
+
+    if(!lineName) return;
+
     const fetchData = async () => {
       try {
         //contruct URL Variable
@@ -58,7 +61,8 @@ function TrainStatus({lineName}) {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p></p>
+        /*<p>Loading...</p>*/
       )}
     </>
   );
