@@ -1,10 +1,12 @@
 import SearchBar from "./searchBar";
+import './header.css'
 
 function Header({setLineName}) {
     return (
-        <header>
-            <SearchBar onSelect={setLineName}/>
-        </header>
+        <div id="innerHead">
+            <span id="logo">LiveRail</span>
+            <SearchBar onSelect={setLineName} id="search"/>
+        </div>
     )
 }
 
