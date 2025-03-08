@@ -44,7 +44,7 @@ function TrainStatus({lineName}) {
   return (
     <>
       {status ? (
-        <div className={`infoContainer ${getStatusClass(status)}`}>
+        <div className={`infoContainer ${getStatusClass(status)} ${!lineName ? "hidden" : "show"}`}>
           <div className="leftContainer">
             <span className="title">{status.name.toUpperCase()} LINE</span>
             <p id="lineStatus">Status: {status.lineStatuses[0]?.statusSeverityDescription}</p>
@@ -64,8 +64,7 @@ function TrainStatus({lineName}) {
           </div>
         </div>
       ) : (
-        <p></p>
-        /*<p>Loading...</p>*/
+        <div className="infoContainer default"></div>
       )}
     </>
   );

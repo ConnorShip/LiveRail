@@ -8,9 +8,24 @@
     border: 2px solid #000000;
     border-radius: 1.25rem 1.25rem 0rem 0rem;
     color: #FFFFFF;
-    transition: transform 0.3s ease-out;
+    transform: translateY(100%); 
+    transition: transform 0.5s ease-out, background-color 0.8s ease-out, border-color 0.8s ease-out;
   }
-  
+
+  .infoContainer.show {
+    transform: translateY(0);
+  }
+
+  .infoContainer.hidden {
+    transform: translateY(100%);
+  }
+
+  .infoContainer.default{
+    background-color: #F8F8F8;
+    border: 1px solid #F8F8F8;
+  }
+
+
   .good-service {
     background-color: #007D32;
   }
