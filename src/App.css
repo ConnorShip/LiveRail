@@ -3,15 +3,30 @@
     justify-content: center;
     width: 100%;
     height: 4rem;
+    position: fixed;
+    z-index: 1000;
+    background-color: bisque;
     outline: 1px solid red;
 }
 
-#Hero {
+#Main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
     outline: 1px solid pink;
   }
+
+#map {
+    max-width: 100%;
+    border-radius: 1.25rem;
+    margin-top: 9.5rem;
+    background-color: #FFFFFF;
+    transition: transform 0.3s ease-in-out;
+      
+}
 
 #trainOuterContainer {
     display: flex;

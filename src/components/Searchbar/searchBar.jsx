@@ -14,6 +14,7 @@ function SearchBar({ onSelect }) {
     
       } else {
         setSuggestions([]);
+        onSelect("");
       }
   };
 

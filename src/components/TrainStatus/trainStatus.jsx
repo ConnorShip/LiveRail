@@ -9,7 +9,10 @@ function TrainStatus({lineName}) {
 
   useEffect(() => {
 
-    if(!lineName) return;
+    if(!lineName){
+      setStatus(null);
+      return;
+    }
 
     const fetchData = async () => {
       try {

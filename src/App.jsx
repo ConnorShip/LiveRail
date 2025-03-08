@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Searchbar/header';
-import Hero from './components/Hero/Hero';
+import Map from './resources/cleanSVG'
 import TrainStatus from './components/TrainStatus/trainStatus';
 import './App.css';
 
@@ -13,11 +13,9 @@ function App() {
       <div id="header">
         <Header setLineName={setLineName} />
       </div>
-      <div id="Hero">
-        <Hero />
-     </div>
-     <div id="trainOuterContainer">
-      <TrainStatus lineName={lineName}/>
+      <div id="Main">
+        < Map id="map"/>
+        <TrainStatus lineName={lineName}/>
      </div>
     </>
   )
