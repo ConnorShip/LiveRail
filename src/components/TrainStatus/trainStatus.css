@@ -1,8 +1,3 @@
-.bottomMain {
-  display: flex;
-  justify-content: center;
-}
-
 .infoContainer {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -13,14 +8,14 @@
     border: 2px solid #000000;
     border-radius: 1.25rem 1.25rem 0rem 0rem;
     color: #FFFFFF;
-    outline: 1px solid red;
+    outline: 1px solid ;
   }
   
   .good-service {
     background-color: #007D32;
   }
   
-  .minor-delays {
+  .minor-delays, .standard-status {
     background-color: #FFD300;
     color: black;
   }

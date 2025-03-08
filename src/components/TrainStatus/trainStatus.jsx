@@ -4,10 +4,8 @@ import './trainStatus.css'
 
 
 //This function fetches the necessary data from TFL API's
-function TrainStatus() {
+function TrainStatus({lineName}) {
   const [status, setStatus] = useState(null);
-
-  const lineName = "central"; //Temporary line name for testing
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +36,7 @@ function TrainStatus() {
   }, [lineName]);
 
   return (
-    <div className="bottomMain">
+    <>
       {status ? (
         <div className={`infoContainer ${getStatusClass(status)}`}>
           <div className="leftContainer">
@@ -62,7 +60,7 @@ function TrainStatus() {
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </>
   );
 }
 

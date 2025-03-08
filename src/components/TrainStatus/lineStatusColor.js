@@ -11,7 +11,7 @@ function getStatusClass(status) {
     case "Severe Delays":
       return "severe-delays"; // Red
     default:
-      return "standard-status"; // My Fallback
+      return "standard-status"; // Fallback
   }
 }
 
