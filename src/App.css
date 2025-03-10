@@ -1,15 +1,3 @@
-#header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 4rem;
-    position: fixed;
-    z-index: 1000;
-    background-color: whitesmoke;
-
-}
-
 #Main {
     display: flex;
     flex-direction: column;
@@ -17,8 +5,26 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    outline: 1px solid pink;
+    background-image: url(./resources/artur-tumasjan-KT_f7y6I2sI-unsplash.jpg);
+    background-position: top;
   }
+
+  #Main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#Main > * {
+    position: relative;
+    z-index: 2;
+}
+
 
 #map {
     max-width: 100%;

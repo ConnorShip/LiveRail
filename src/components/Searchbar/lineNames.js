@@ -1,6 +1,7 @@
 const lineNames = [
     "bakerloo",
     "circle",
+    "central",
     "district",
     "hammersmith-city",
     "jubilee",

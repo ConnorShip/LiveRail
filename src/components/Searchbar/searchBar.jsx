@@ -1,41 +1,46 @@
-import lineNames from './lineNames';
-import {useState} from 'react';
+import lineNames from "./lineNames";
+import { useState } from "react";
+import "./searchBar.css";
 
 function SearchBar({ onSelect }) {
   const [search, setSearch] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const value = e.target.value.toLowerCase();
-      setSearch(value);
+    setSearch(value);
 
-      if(value) {
-        setSuggestions(lineNames.filter((line) => line.startsWith(value)));
-    
-      } else {
-        setSuggestions([]);
-        onSelect("");
-      }
+    if (value) {
+      setSuggestions(lineNames.filter((line) => line.startsWith(value)));
+    } else {
+      setSuggestions([]);
+      onSelect("");
+    }
   };
 
   const handleSelect = (line) => {
     setSearch(line);
-    setSuggestions([]); 
+    setSuggestions([]);
     onSelect(line);
   };
 
   return (
-    <div>
+    <div className="searchContainer">
       <input
+        className="searchInput"
         type="text"
         placeholder="Search lines..."
         value={search}
         onChange={handleChange}
       />
       {suggestions.length > 0 && (
-        <ul>
+        <ul className="suggestionList">
           {suggestions.map((line) => (
-            <li key={line} onClick={() => handleSelect(line)}>
+            <li
+              className="suggestionItem"
+              key={line}
+              onClick={() => handleSelect(line)}
+            >
               {line}
             </li>
           ))}
@@ -43,7 +48,6 @@ function SearchBar({ onSelect }) {
       )}
     </div>
   );
-};
+}
 
 export default SearchBar;
-

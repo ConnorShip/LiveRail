@@ -3,9 +3,12 @@ import './header.css'
 
 function Header({setLineName}) {
     return (
-        <div id="innerHead">
-            <span id="logo">LiveRail</span>
-            <SearchBar onSelect={setLineName} id="search"/>
+        <div id="header">
+            <div id="innerHead">
+                <div id="searchWrapper">
+                <SearchBar onSelect={setLineName}/>
+                </div>
+            </div>
         </div>
     )
 }
