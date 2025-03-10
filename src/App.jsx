@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./components/Searchbar/header";
+import Header from "./components/Header/header";
 import Map from "./resources/cleanSVG";
 import TrainStatus from "./components/TrainStatus/trainStatus";
 import "./App.css";

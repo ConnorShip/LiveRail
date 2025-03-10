@@ -1,4 +1,4 @@
-import lineNames from "./lineNames";
+import lineNames from "../TrainStatus/lineNames";
 import { useState } from "react";
 import "./searchBar.css";
 

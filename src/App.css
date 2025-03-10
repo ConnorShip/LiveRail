@@ -6,7 +6,7 @@
     overflow: hidden;
     position: relative;
     background-image: url(./resources/artur-tumasjan-KT_f7y6I2sI-unsplash.jpg);
-    background-position: top;
+    background-position: center;
   }
 
   #Main::before {
@@ -27,7 +27,7 @@
 
 
 #map {
-    max-width: 100%;
+    max-width: 90%;
     border-radius: 1.25rem;
     margin-top: 9.5rem;
     background-color: #FFFFFF;
@@ -38,4 +38,13 @@
 #trainOuterContainer {
     display: flex;
     justify-content: center;
+}
+
+/* Phone */
+
+
+@media (max-width: 430px) {
+    #map {
+        height: 50%;
+    }
 }
