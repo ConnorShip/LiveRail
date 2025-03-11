@@ -31,8 +31,6 @@
     border-radius: 1.25rem;
     margin-top: 9.5rem;
     background-color: #FFFFFF;
-    transition: transform 0.3s ease-in-out;
-      
 }
 
 #trainOuterContainer {
@@ -40,11 +38,3 @@
     justify-content: center;
 }
 
-/* Phone */
-
-
-@media (max-width: 430px) {
-    #map {
-        height: 50%;
-    }
-}

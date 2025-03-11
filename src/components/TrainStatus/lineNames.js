@@ -10,7 +10,15 @@ const lineNames = [
     "piccadilly",
     "victoria",
     "windrush",
-    "waterloo-city"
+    "waterloo-city",
+    "elizabeth",
+    "dlr",
+    "liberty",
+    "lioness",
+    "mildmay",
+    "suffragette",
+    "weaver",
+    "thameslink",
 ];
 
 export default lineNames;
