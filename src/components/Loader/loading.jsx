@@ -6,7 +6,7 @@ const LoadScreen = () => {
       <div className="stage">
         <div className="container">
           <div className="image box">
-            <img id="logo" src="/src/resources/Logo.svg" alt="Logo" />
+            <img id="logo" src="/public/Logo.svg" alt="Logo" />
           </div>
           <div className="load box">
             <div className="cir cir-1"></div>
